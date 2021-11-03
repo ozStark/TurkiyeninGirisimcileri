@@ -17,12 +17,13 @@ Feature: User can see 5 registration category options and click any category to 
   Scenario Outline:
 
     When User clicks any "<category>"
-    Then The category is selected and SEÇ VE DEVAM ET button is visible
+    Then The category is selected
+    And SEÇ VE DEVAM ET button is visible
 
     Examples:
       | category                                 |
-#      | Hedefim Küresel Başarı                   |
-#      | Kadın Teknoloji Girişimcisi              |
+      | Hedefim Küresel Başarı                   |
+      | Kadın Teknoloji Girişimcisi              |
       | Çevre ve Sürdürülebilirlik Dostu Girişim |
       | Covid 19'u Fırsata Çeviren               |
-      | 1512 ile Yola Çıkan Girişimci            |
+#      | 1512 ile Yola Çıkan Girişimci            |

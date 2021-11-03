@@ -33,11 +33,6 @@ public class KayitPage {
     @FindBy(xpath = "//div[@class='check-list-item selected']/button")
     public WebElement selectedCategoryButton;
 
-    public final String firstCategory = registrationCategoriesTextList.get(0).getText();
-    String secondCategory = registrationCategoriesTextList.get(1).getText();
-    String thirdCategory = registrationCategoriesTextList.get(2).getText();
-    String fourthCategory = registrationCategoriesTextList.get(3).getText();
-    String fifthCategory = registrationCategoriesTextList.get(4).getText();
 
     Actions actions = new Actions(Driver.getDriver());
     WebDriverWait wait = new WebDriverWait(Driver.getDriver(), 10);
@@ -54,8 +49,8 @@ public class KayitPage {
         for (int i = 0; i < categoryList.size(); i++) {
             category = registrationCategoriesBox.get(i);
             if(categoryList.get(i).equals(nameOfCategory)){
-                //jse.executeScript("arguments[0].scrollIntoView(true);", category);
-                actions.moveToElement(category).perform();
+                jse.executeScript("arguments[0].scrollIntoView(true);", category);
+                //actions.moveToElement(category).perform();
                 wait.until(ExpectedConditions.elementToBeClickable(category));
                 category.click();
                 break;

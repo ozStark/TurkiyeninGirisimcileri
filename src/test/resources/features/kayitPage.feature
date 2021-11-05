@@ -26,4 +26,4 @@ Feature: User can see 5 registration category options and click any category to 
       | Kadın Teknoloji Girişimcisi              |
       | Çevre ve Sürdürülebilirlik Dostu Girişim |
       | Covid 19'u Fırsata Çeviren               |
-#      | 1512 ile Yola Çıkan Girişimci            |
+      | 1512 ile Yola Çıkan Girişimci            |

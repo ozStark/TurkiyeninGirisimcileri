@@ -14,6 +14,7 @@ import static org.junit.Assert.assertTrue;
 public class KayitPageStepDefs {
 
     KayitPage kayitPage = new KayitPage();
+    String selectedCategory = "";
 
     @Given("User is at the kayit page")
     public void user_is_at_the_kayit_page() {
@@ -30,17 +31,19 @@ public class KayitPageStepDefs {
 
     @When("User clicks any {string}")
     public void user_clicks_any(String categoryName) {
+        selectedCategory = categoryName;
         kayitPage.selectCategoryByName(categoryName);
     }
-    @Then("The category is selected")
-    public void the_category_is_selected_and_seç_ve_devam_et_button_is_visible() {
 
+    @Then("The category is selected")
+    public void the_category_is_selected() {
+        System.out.println(kayitPage.verifyCategoryIsSelected(selectedCategory));
+        assertTrue(kayitPage.verifyCategoryIsSelected(selectedCategory));
     }
 
     @Then("SEÇ VE DEVAM ET button is visible")
     public void seç_ve_devam_et_button_is_visible() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+        assertTrue(kayitPage.selectedCategorySecVeDevamEtButton.isDisplayed());
     }
 
 
